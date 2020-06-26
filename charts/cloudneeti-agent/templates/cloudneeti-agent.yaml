@@ -35,7 +35,7 @@ spec:
       template:
         spec:
           hostPID: true
-          {{ if or ( contains "aks-engine" .Values.clusterHosting ) ( contains "vm-based" .Values.clusterHosting ) ( contains "ec2-instance-based" .Values.clusterHosting ) }}
+          {{ if or ( contains "AKS-Engine" .Values.clusterHosting ) ( contains "VM-Based" .Values.clusterHosting ) ( contains "EC2-Instance-Based" .Values.clusterHosting ) }}
           nodeSelector:
             node-role.kubernetes.io/master: ""
           tolerations:
