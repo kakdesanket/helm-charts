@@ -1,0 +1,31 @@
+# Default values for cloudneeti-agent.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+# Cloudneeti Agent details
+namespace: cloudneeti
+
+# Cloudneeti Agent configuration details
+clusterName: "<cluster_name>"
+licenseId: "<cloudneeti_licenseId>"
+accountId: "<cloudneeti_accountId>"
+cloudneetiApiAppId: "<cloudneeti_ApiAppId>"
+
+clusterHosting: "AKS"
+cloudneetiEnvironment: "prod"
+  
+# Coudneeti API and ApiApp key/secrets
+cloudneetiAPIKey: "<cloudneetiAPIKey>"
+cloudneetiAPIAppSecret: "<cloudneetiAPIAppSecret>"
+
+image:
+  repository: cloudneeticorp/cloudneeti-agent
+  tag: 2.6
+  pullPolicy: IfNotPresent
+
+cronjob:
+  # At 12:00 every day
+  schedule: "0 12 * * *"
+  concurrencyPolicy: "Forbid"
+  failedJobsHistoryLimit: "3"
+  successfulJobsHistoryLimit: "2"
