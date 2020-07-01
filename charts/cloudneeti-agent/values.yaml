@@ -9,9 +9,10 @@ namespace: cloudneeti
 clusterName: "<cluster_name>"
 licenseId: "<cloudneeti_licenseId>"
 accountId: "<cloudneeti_accountId>"
-cloudneetiEnvironment: "<environment>"
 cloudneetiApiAppId: "<cloudneeti_ApiAppId>"
-clusterHosting: "<AKS/AKS-Engine/EKS/VM-Based/EC2-Instance-Based>"
+
+clusterHosting: "AKS"
+cloudneetiEnvironment: "prod"
   
 # Coudneeti API and ApiApp key/secrets
 cloudneetiAPIKey: "<cloudneetiAPIKey>"
