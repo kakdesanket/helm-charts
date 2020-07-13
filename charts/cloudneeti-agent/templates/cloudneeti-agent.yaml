@@ -92,6 +92,11 @@ spec:
                   configMapKeyRef:
                     name: {{ template "cloudneeti-agent.name" . }}-config
                     key: cloudneetiApiAppId
+              - name: CLUSTER_HOSTING
+                valueFrom:
+                  configMapKeyRef:
+                    name: {{ template "cloudneeti-agent.name" . }}-config
+                    key: clusterHosting
               - name: CLOUDNEETI_API_KEY
                 valueFrom:
                   secretKeyRef:
