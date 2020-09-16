@@ -3,6 +3,20 @@ entries:
   cloudneeti-agent:
   - apiVersion: v2
     appVersion: "2.8"
+    created: "2020-09-16T11:17:05.933294811Z"
+    description: A Helm chart for Cloudneeti Kubernetes Agent
+    digest: 4aa7864ad37e13beca1c41872d8fbbd60d22e0ce72fb1d4b5c17e75f0d7ea97d
+    home: https://github.com/Cloudneeti/helm-charts
+    maintainers:
+    - email: cspm-support@zscaler.com
+      name: Cloudneeti
+    name: cloudneeti-agent
+    type: application
+    urls:
+    - https://github.com/Cloudneeti/helm-charts/releases/download/cloudneeti-agent-0.4.0/cloudneeti-agent-0.4.0.tgz
+    version: 0.4.0
+  - apiVersion: v2
+    appVersion: "2.8"
     created: "2020-08-12T12:36:21.967903164Z"
     description: A Helm chart for Cloudneeti Kubernetes Agent
     digest: 9bb36a0157dc666e9de5de29fd2de513c4149dd4fce701291fed7ca587e7c52c
