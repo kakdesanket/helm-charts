@@ -13,7 +13,7 @@ cloudneetiApiAppId: "<cloudneeti_ApiAppId>"
 
 clusterHosting: "AKS"
 cloudneetiEnvironment: "prod"
-  
+
 # Coudneeti API and ApiApp key/secrets
 cloudneetiAPIKey: "<cloudneetiAPIKey>"
 cloudneetiAPIAppSecret: "<cloudneetiAPIAppSecret>"

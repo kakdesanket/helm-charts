@@ -43,7 +43,7 @@ The following table lists the required Cloudneeti configuration parameters along
 | `clusterHosting`                   | Kubernetes Cluster hosting to use                               | `AKS`                        |    `Yes`    |
 | `cloudneetiEnvironment`                   | Cloudneeti environment to use                                | `prod`                        |    `No`    |
 | `image.repository`                   | Container image to use                                | `cloudneeticorp/cloudneeti-agent`                        |    `No`    |
-| `image.tag`                          | Container image tag to deploy                         | `2.6`                                        |    `No`    |
+| `image.tag`                          | Container image tag to deploy                         | `2.8`                                        |    `No`    |
 | `image.pullPolicy`                   | Container pull policy                                 | `IfNotPresent`                               |    `No`    |
 | `cronjob.schedule`                   | Schedule for the CronJob                              | `0 12 * * *`                                  |    `No`    |
 | `cronjob.concurrencyPolicy`          | `Allow|Forbid|Replace` concurrent jobs                | `Forbid`                                     |    `No`    |
@@ -57,7 +57,7 @@ Specify each parameter using the `--set key=value[,key=value]` argument to `helm
 To upgrade the chart, use the following:
 
 ```console
-$ helm upgrade [RELEASE] charts/cloudneeti-agent [flags]
+$ helm upgrade [RELEASE] charts/cloudneeti-agent [flags] --reuse-values
 ```
 Specify parameter using the `--set key=value[,key=value]` argument to `helm upgrade`  in order to modify earlier set values.
 
