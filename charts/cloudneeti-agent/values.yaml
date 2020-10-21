@@ -20,7 +20,7 @@ cloudneetiAPIAppSecret: "<cloudneetiAPIAppSecret>"
 
 image:
   repository: cloudneeticorp/cloudneeti-agent
-  tag: 2.8
+  tag: 2.9
   pullPolicy: IfNotPresent
 
 cronjob:
