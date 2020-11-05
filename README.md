@@ -13,13 +13,6 @@ This chart will do the following:
 
 ## Installing the Chart
 
-To add the cloudneeti helm-repo, run the below command:
-
-```console
-
-helm repo add cloudneeti https://charts.cloudneeti.com
-```
-
 To install the chart, use the following:
 
 ```console
