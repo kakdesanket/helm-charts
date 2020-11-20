@@ -1,49 +1,49 @@
-# Cloudneeti Kubernetes Agent Helm Chart
+# ZCSPM Kubernetes Agent Helm Chart
 
-This directory contains a Kubernetes chart to deploy Cloudneeti Agent.
+This directory contains a Kubernetes chart to deploy ZCSPM Agent.
 
 ## Chart Details
 
 This chart will do the following:
 
 * Create a Namespace
-* Create a Configmap with Cloudneeti Configurations
-* Create a Secret with Cloudneeti API keys
-* Create a CronJob which runs Cloudneeti Agent
+* Create a Configmap with ZCSPM Configurations
+* Create a Secret with ZCSPM API keys
+* Create a CronJob which runs ZCSPM Agent
 
 ## Installing the Chart
 
 To install the chart, use the following:
 
 ```console
-$ helm install <Release Name> charts/cloudneeti-agent \
+$ helm install <Release Name> charts/zcspm-agent \
     --set clusterName=<Name of K8s Cluster> \
-    --set licenseId=<Cloudneeti License Id> \
-    --set accountId=<Cloudneeti Account Id> \
-    --set cloudneetiApiAppId=<Cloudneeti API App Id> \
-    --set cloudneetiAPIAppSecret=<Cloudneeti API App Secret> \
-    --set cloudneetiAPIKey=<Cloudneeti API Key> \
+    --set licenseId=<ZCSPM License Id> \
+    --set accountId=<ZCSPM Account Id> \
+    --set zcspmApiAppId=<ZCSPM API App Id> \
+    --set zcspmAPIAppSecret=<ZCSPM API App Secret> \
+    --set zcspmAPIKey=<ZCSPM API Key> \
     --set clusterHosting=<AKS/AKS-Engine/EKS/VM-hosted/EC2-Instance-hosted/GKE>
 ```
 
-Put release name as `cloudneeti-agent`
+Put release name as `zcspm-agent`
 
 ## Configuration
 
-The following table lists the required Cloudneeti configuration parameters along with their default values.
+The following table lists the required ZCSPM configuration parameters along with their default values.
 
 |          Parameter                   |                      Description                      |                   Default                    |                      Required from Customer                     |
 | :----------------------------------- | :---------------------------------------------------- | :------------------------------------------- | :------------------------------------------- |
 | `clusterName`                   | Kubernetes Cluster Name                                | `-`                        |   `Yes`       |
-| `licenseId`                   | Cloudneeti API License Id                  | `-`                        |   `Yes`       |
-| `accountId`                   | Cloudneeti Account Id                                | `-`                        |   `Yes`       |
-| `cloudneetiAPIAppId`                   | Cloudneeti API App Id                                | `-`                        |   `Yes`       |
-| `cloudneetiAPIAppSecret`                   | Cloudneeti API App Secert                                | `-`                        |   `Yes`       |
-| `cloudneetiAPIKey`                   | Cloudneeti API Key                                | `-`                        |   `Yes`       |
+| `licenseId`                   | ZCSPM API License Id                  | `-`                        |   `Yes`       |
+| `accountId`                   | ZCSPM Account Id                                | `-`                        |   `Yes`       |
+| `zcspmAPIAppId`                   | ZCSPM API App Id                                | `-`                        |   `Yes`       |
+| `zcspmAPIAppSecret`                   | ZCSPM API App Secert                                | `-`                        |   `Yes`       |
+| `zcspmAPIKey`                   | ZCSPM API Key                                | `-`                        |   `Yes`       |
 | `clusterHosting`                   | Kubernetes Cluster hosting to use                               | `AKS`                        |    `Yes`    |
-| `cloudneetiEnvironment`                   | Cloudneeti environment to use                                | `prod`                        |    `No`    |
+| `zcspmEnvironment`                   | ZCSPM environment to use                                | `prod`                        |    `No`    |
 | `image.repository`                   | Container image to use                                | `cloudneeticorp/cloudneeti-agent`                        |    `No`    |
-| `image.tag`                          | Container image tag to deploy                         | `2.10`                                        |    `No`    |
+| `image.tag`                          | Container image tag to deploy                         | `2.11`                                        |    `No`    |
 | `image.pullPolicy`                   | Container pull policy                                 | `IfNotPresent`                               |    `No`    |
 | `cronjob.schedule`                   | Schedule for the CronJob                              | `0 12 * * *`                                  |    `No`    |
 | `cronjob.concurrencyPolicy`          | `Allow|Forbid|Replace` concurrent jobs                | `Forbid`                                     |    `No`    |
@@ -57,7 +57,7 @@ Specify each parameter using the `--set key=value[,key=value]` argument to `helm
 To upgrade the chart, use the following:
 
 ```console
-$ helm upgrade [RELEASE] charts/cloudneeti-agent [flags] --reuse-values
+$ helm upgrade [RELEASE] charts/zcspm-agent [flags] --reuse-values
 ```
 Specify parameter using the `--set key=value[,key=value]` argument to `helm upgrade`  in order to modify earlier set values.
 

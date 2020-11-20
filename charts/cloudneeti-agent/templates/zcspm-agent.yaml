@@ -1,4 +1,4 @@
-#Copyright (c) Cloudneeti. All rights reserved.
+#Copyright (c) ZCSPM. All rights reserved.
 #Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is  furnished to do so, subject to the following conditions:
 #The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 #THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
@@ -6,11 +6,11 @@
 apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
-  name: {{ template "cloudneeti-agent.name" . }}
+  name: {{ template "zcspm-agent.name" . }}
   namespace: {{ .Values.namespace }}
   labels:
-    app: {{ template "cloudneeti-agent.name" . }}
-    chart: {{ template "cloudneeti-agent.chart" . }}
+    app: {{ template "zcspm-agent.name" . }}
+    chart: {{ template "zcspm-agent.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
 spec:
@@ -27,8 +27,8 @@ spec:
   jobTemplate:
     metadata:
       labels:
-        app: {{ template "cloudneeti-agent.name" . }}
-        chart: {{ template "cloudneeti-agent.chart" . }}
+        app: {{ template "zcspm-agent.name" . }}
+        chart: {{ template "zcspm-agent.chart" . }}
         release: {{ .Release.Name }}
         heritage: {{ .Release.Service }}
     spec:
@@ -64,49 +64,49 @@ spec:
               mountPath: /usr/bin
             - name: kube-bench-log
               mountPath: /var/log/kube-bench
-          - name: {{ template "cloudneeti-agent.name" . }}
+          - name: {{ template "zcspm-agent.name" . }}
             image: {{ .Values.image.repository}}:{{ .Values.image.tag }}
             env:
               - name: CLUSTER_NAME
                 valueFrom:
                   configMapKeyRef:
-                    name: {{ template "cloudneeti-agent.name" . }}-config
+                    name: {{ template "zcspm-agent.name" . }}-config
                     key: clusterName
               - name: LICENSE_ID
                 valueFrom:
                   configMapKeyRef:
-                    name: {{ template "cloudneeti-agent.name" . }}-config
+                    name: {{ template "zcspm-agent.name" . }}-config
                     key: licenseId
               - name: ACCOUNT_ID
                 valueFrom:
                   configMapKeyRef:
-                    name: {{ template "cloudneeti-agent.name" . }}-config
+                    name: {{ template "zcspm-agent.name" . }}-config
                     key: accountId
-              - name: CLOUDNEETI_ENV
+              - name: ZCSPM_ENV
                 valueFrom:
                   configMapKeyRef:
-                    name: {{ template "cloudneeti-agent.name" . }}-config
-                    key: cloudneetiEnvironment
-              - name: CLOUDNEETI_APIAPP_ID
+                    name: {{ template "zcspm-agent.name" . }}-config
+                    key: zcspmEnvironment
+              - name: ZCSPM_APIAPP_ID
                 valueFrom:
                   configMapKeyRef:
-                    name: {{ template "cloudneeti-agent.name" . }}-config
-                    key: cloudneetiApiAppId
+                    name: {{ template "zcspm-agent.name" . }}-config
+                    key: zcspmApiAppId
               - name: CLUSTER_HOSTING
                 valueFrom:
                   configMapKeyRef:
-                    name: {{ template "cloudneeti-agent.name" . }}-config
+                    name: {{ template "zcspm-agent.name" . }}-config
                     key: clusterHosting
-              - name: CLOUDNEETI_API_KEY
+              - name: ZCSPM_API_KEY
                 valueFrom:
                   secretKeyRef:
-                    name: {{ template "cloudneeti-agent.name" . }}-secret
-                    key: cloudneetiAPIKey
-              - name: CLOUDNEETI_APIAPP_SECRET
+                    name: {{ template "zcspm-agent.name" . }}-secret
+                    key: zcspmAPIKey
+              - name: ZCSPM_APIAPP_SECRET
                 valueFrom:
                   secretKeyRef:
-                    name: {{ template "cloudneeti-agent.name" . }}-secret
-                    key: cloudneetiAPIAppSecret
+                    name: {{ template "zcspm-agent.name" . }}-secret
+                    key: zcspmAPIAppSecret
             volumeMounts:
             - name: kube-bench-log
               mountPath: /var/log/kube-bench

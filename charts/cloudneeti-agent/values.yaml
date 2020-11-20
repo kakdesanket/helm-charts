@@ -1,26 +1,26 @@
-# Default values for cloudneeti-agent.
+# Default values for zcspm-agent.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-# Cloudneeti Agent details
-namespace: cloudneeti
+# ZCSPM Agent details
+namespace: zcspm
 
-# Cloudneeti Agent configuration details
+# ZCSPM Agent configuration details
 clusterName: "<cluster_name>"
-licenseId: "<cloudneeti_licenseId>"
-accountId: "<cloudneeti_accountId>"
-cloudneetiApiAppId: "<cloudneeti_ApiAppId>"
+licenseId: "<zcspm_licenseId>"
+accountId: "<zcspm_accountId>"
+zcspmApiAppId: "<zcspm_ApiAppId>"
 
 clusterHosting: "AKS"
-cloudneetiEnvironment: "prod"
+zcspmEnvironment: "prod"
 
 # Coudneeti API and ApiApp key/secrets
-cloudneetiAPIKey: "<cloudneetiAPIKey>"
-cloudneetiAPIAppSecret: "<cloudneetiAPIAppSecret>"
+zcspmAPIKey: "<zcspmAPIKey>"
+zcspmAPIAppSecret: "<zcspmAPIAppSecret>"
 
 image:
-  repository: cloudneeticorp/cloudneeti-agent
-  tag: "2.10"
+  repository: cloudneeticorp/zcspm-agent
+  tag: "2.11"
   pullPolicy: IfNotPresent
 
 cronjob:

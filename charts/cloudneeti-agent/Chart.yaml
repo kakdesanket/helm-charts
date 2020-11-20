@@ -1,10 +1,10 @@
 apiVersion: v2
-name: cloudneeti-agent
-description: A Helm chart for Cloudneeti Kubernetes Agent
+name: zcspm-agent
+description: A Helm chart for ZCSPM Kubernetes Agent
 
 home: https://github.com/Cloudneeti/helm-charts
 maintainers:
-  - name: Cloudneeti
+  - name: ZCSPM
     email: cspm-support@zscaler.com
 
 # A chart can be either an 'application' or a 'library' chart.
@@ -20,9 +20,9 @@ type: application
 # This is the chart version. This version number should be incremented each time you make changes
 # to the chart and its templates, including the app version.
 # Versions are expected to follow Semantic Versioning (https://semver.org/)
-version: 0.6.0
+version: 0.7.0
 
 # This is the version number of the application being deployed. This version number should be
 # incremented each time you make changes to the application. Versions are not expected to
 # follow Semantic Versioning. They should reflect the version the application is using.
-appVersion: "2.10"
+appVersion: "2.11"
