@@ -21,7 +21,7 @@ zcspmAPIAppSecret: "<zcspmAPIAppSecret>"
 image:
   repository: cloudneeticorp/zcspm-agent
   tag: "2.11"
-  pullPolicy: IfNotPresent
+  imagePullPolicy: Always
 
 cronjob:
   # At 12:00 every day

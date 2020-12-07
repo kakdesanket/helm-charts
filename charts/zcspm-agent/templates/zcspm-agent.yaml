@@ -66,6 +66,7 @@ spec:
               mountPath: /var/log/kube-bench
           - name: {{ template "zcspm-agent.name" . }}
             image: {{ .Values.image.repository}}:{{ .Values.image.tag }}
+            imagePullPolicy: {{ .Values.image.imagePullPolicy}}
             env:
               - name: CLUSTER_NAME
                 valueFrom:
