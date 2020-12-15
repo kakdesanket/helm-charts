@@ -34,8 +34,14 @@ The following table lists the required ZCSPM configuration parameters along with
 
 |          Parameter                   |                      Description                      |                   Default                    |                      Required from Customer                     |
 | :----------------------------------- | :---------------------------------------------------- | :------------------------------------------- | :------------------------------------------- |
-| `clusterName`                   | Kubernetes Cluster Name                                | 
-
+| `clusterName`                   | Kubernetes Cluster Name                                | `-`                        |   `Yes`       |
+| `licenseId`                   | ZCSPM API License Id                  | `-`                        |   `Yes`       |
+| `accountId`                   | ZCSPM Account Id                                | `-`                        |   `Yes`       |
+| `zcspmAPIAppId`                   | ZCSPM API App Id                                | `-`                        |   `Yes`       |
+| `zcspmAPIAppSecret`                   | ZCSPM API App Secert                                | `-`                        |   `Yes`       |
+| `zcspmAPIKey`                   | ZCSPM API Key                                | `-`                        |   `Yes`       |
+| `clusterHosting`                   | Kubernetes Cluster hosting to use                               | `AKS`                        |    `Yes`    |
+| `zcspmEnvironment`                   | ZCSPM environment to use                                | `prod`                        |    `No`    |
 | `image.repository`                   | Container image to use                                | `cloudneeticorp/zcspm-agent`                        |    `No`    |
 | `image.tag`                          | Container image tag to deploy                         | `2.11`                                        |    `No`    |
 | `image.pullPolicy`                   | Container pull policy                                 | `IfNotPresent`                               |    `No`    |

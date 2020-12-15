@@ -4,7 +4,7 @@ description: A Helm chart for ZCSPM Kubernetes Agent
 
 home: https://github.com/Cloudneeti/helm-charts
 maintainers:
-  - name: ZCSPM
+  - name: Cloudneeti
     email: cspm-support@zscaler.com
 
 # A chart can be either an 'application' or a 'library' chart.
