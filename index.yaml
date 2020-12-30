@@ -1,5 +1,20 @@
 apiVersion: v1
 entries:
+  zcspm-agent:
+  - apiVersion: v2
+    appVersion: "2.11"
+    created: "2020-12-30T21:14:02.230588232Z"
+    description: A Helm chart for ZCSPM Kubernetes Agent
+    digest: 411beabe7949d52a3f2f6f91652c6264bf3ab3c9204e680944681f462ec411e9
+    home: https://github.com/Cloudneeti/helm-charts
+    maintainers:
+    - email: cspm-support@zscaler.com
+      name: Cloudneeti
+    name: zcspm-agent
+    type: application
+    urls:
+    - https://github.com/Cloudneeti/helm-charts/releases/download/zcspm-agent-0.7.0/zcspm-agent-0.7.0.tgz
+    version: 0.7.0
   cloudneeti-agent:
   - apiVersion: v2
     appVersion: "2.10"
