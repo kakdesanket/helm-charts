@@ -44,7 +44,7 @@ spec:
               effect: NoSchedule
           {{ end }}
           restartPolicy: OnFailure
-          containers:
+          initContainers:
           - name: metadata-scanner
             image: aquasec/kube-bench:latest
             command: ["/bin/sh", "-c"]
@@ -64,6 +64,7 @@ spec:
               mountPath: /usr/bin
             - name: kube-bench-log
               mountPath: /var/log/kube-bench
+          containers:
           - name: {{ template "zcspm-agent.name" . }}
             image: {{ .Values.image.repository}}:{{ .Values.image.tag }}
             imagePullPolicy: {{ .Values.image.imagePullPolicy}}
