@@ -46,7 +46,8 @@ spec:
           restartPolicy: OnFailure
           initContainers:
           - name: metadata-scanner
-            image: aquasec/kube-bench:latest
+            image: {{ .Values.images.kubebenchImage.repository}}:{{ .Values.images.kubebenchImage.tag }}
+            imagePullPolicy: {{ .Values.images.imagePullPolicy}}
             command: ["/bin/sh", "-c"]
             args: ["kube-bench --benchmark cis-1.5 >> /var/log/kube-bench/kube-bench.log 2>&1"]
             volumeMounts:
@@ -66,8 +67,8 @@ spec:
               mountPath: /var/log/kube-bench
           containers:
           - name: {{ template "zcspm-agent.name" . }}
-            image: {{ .Values.image.repository}}:{{ .Values.image.tag }}
-            imagePullPolicy: {{ .Values.image.imagePullPolicy}}
+            image: {{ .Values.images.zcspmAgentImage.repository}}:{{ .Values.images.zcspmAgentImage.tag }}
+            imagePullPolicy: {{ .Values.images.imagePullPolicy}}
             env:
               - name: CLUSTER_NAME
                 valueFrom:

@@ -43,9 +43,9 @@ The following table lists the required ZCSPM configuration parameters along with
 | `zcspmAPIKey`                   | ZCSPM API Key                                | `-`                        |   `Yes`       |
 | `clusterHosting`                   | Kubernetes Cluster hosting to use                               | `AKS`                        |    `Yes`    |
 | `zcspmEnvironment`                   | ZCSPM environment to use                                | `prod`                        |    `No`    |
-| `image.repository`                   | Container image to use                                | `cloudneeticorp/zcspm-agent`                        |    `No`    |
-| `image.tag`                          | Container image tag to deploy                         | `2.11`                                        |    `No`    |
-| `image.pullPolicy`                   | Container pull policy                                 | `Always`                               |    `No`    |
+| `images.zcspmAgentImage.repository`                   | Container image to use                                | `cloudneeticorp/zcspm-agent`                        |    `No`    |
+| `images.zcspmAgentImage.tag`                          | Container image tag to deploy                         | `2.11`                                        |    `No`    |
+| `images.pullPolicy`                   | Container pull policy                                 | `Always`                               |    `No`    |
 | `cronjob.schedule`                   | Schedule for the CronJob                              | `0 12 * * *`                                  |    `No`    |
 | `cronjob.concurrencyPolicy`          | `Allow|Forbid|Replace` concurrent jobs                | `Forbid`                                     |    `No`    |
 | `cronjob.failedJobsHistoryLimit`     | Specify the number of failed Jobs to keep             | `3`                                          |    `No`    |
