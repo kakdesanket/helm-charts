@@ -19,7 +19,8 @@ zcspmAPIKey: "<zcspmAPIKey>"
 zcspmAPIAppSecret: "<zcspmAPIAppSecret>"
 
 images:
-  imagePullPolicy: Always   # Default image pull policy for all images
+# Default image pull policy for all images
+  imagePullPolicy: Always
 
   zcspmAgentImage: 
     repository: cloudneeticorp/zcspm-agent
