@@ -22,6 +22,7 @@ images:
 # Default image pull policy for all images
   imagePullPolicy: Always
 
+# Details of images being used in the chart 
   zcspmAgentImage: 
     repository: cloudneeticorp/zcspm-agent
     tag: "2.11"
