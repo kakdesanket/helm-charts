@@ -20,7 +20,7 @@ $ helm install <Release Name> charts/zcspm-agent \
     --set clusterName=<Name of K8s Cluster> \
     --set licenseId=<ZCSPM License Id> \
     --set accountId=<ZCSPM Account Id> \
-    --set zcspmEnvironment=<qa/trial/prod> \
+    --set zcspmEnvironment=<qa/trial/prod/prod1> \
     --set zcspmApiAppId=<ZCSPM API App Id> \
     --set zcspmAPIAppSecret=<ZCSPM API App Secret> \
     --set zcspmAPIKey=<ZCSPM API Key> \
@@ -44,7 +44,7 @@ The following table lists the required ZCSPM configuration parameters along with
 | `clusterHosting`                   | Kubernetes Cluster hosting to use                               | `AKS`                        |    `Yes`    |
 | `zcspmEnvironment`                   | ZCSPM environment to use                                | `prod`                        |    `No`    |
 | `images.zcspmAgentImage.repository`                   | Container image to use                                | `cloudneeticorp/zcspm-agent`                        |    `No`    |
-| `images.zcspmAgentImage.tag`                          | Container image tag to deploy                         | `2.11`                                        |    `No`    |
+| `images.zcspmAgentImage.tag`                          | Container image tag to deploy                         | `2.12`                                        |    `No`    |
 | `images.pullPolicy`                   | Container pull policy                                 | `Always`                               |    `No`    |
 | `cronjob.schedule`                   | Schedule for the CronJob                              | `0 12 * * *`                                  |    `No`    |
 | `cronjob.concurrencyPolicy`          | `Allow|Forbid|Replace` concurrent jobs                | `Forbid`                                     |    `No`    |
