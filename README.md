@@ -20,7 +20,7 @@ $ helm install <Release Name> charts/zcspm-agent \
     --set clusterName=<Name of K8s Cluster> \
     --set licenseId=<ZCSPM License Id> \
     --set accountId=<ZCSPM Account Id> \
-    --set zcspmEnvironment=<qa/trial/prod/prod1> \
+    --set zcspmEnvironment=<qa/trial/prod/prod1/prod2/prod3> \
     --set zcspmApiAppId=<ZCSPM API App Id> \
     --set zcspmAPIAppSecret=<ZCSPM API App Secret> \
     --set zcspmAPIKey=<ZCSPM API Key> \
