@@ -44,7 +44,7 @@ The following table lists the required ZCSPM configuration parameters along with
 | `clusterHosting`                   | Kubernetes Cluster hosting to use                               | `AKS`                        |    `Yes`    |
 | `zcspmEnvironment`                   | ZCSPM environment to use                                | `prod`                        |    `No`    |
 | `images.zcspmAgentImage.repository`                   | Container image to use                                | `cloudneeticorp/zcspm-agent`                        |    `No`    |
-| `images.zcspmAgentImage.tag`                          | Container image tag to deploy                         | `2.12`                                        |    `No`    |
+| `images.zcspmAgentImage.tag`                          | Container image tag to deploy                         | `2.13`                                        |    `No`    |
 | `images.pullPolicy`                   | Container pull policy                                 | `Always`                               |    `No`    |
 | `cronjob.schedule`                   | Schedule for the CronJob                              | `0 12 * * *`                                  |    `No`    |
 | `cronjob.concurrencyPolicy`          | `Allow|Forbid|Replace` concurrent jobs                | `Forbid`                                     |    `No`    |
